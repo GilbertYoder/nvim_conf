@@ -1,7 +1,9 @@
 vim.opt.guicursor = ""
+vim.opt.updatetime = 100
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -25,3 +27,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.api.nvim_exec(
+[[
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
+]], false )
