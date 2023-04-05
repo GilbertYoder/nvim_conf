@@ -11,7 +11,10 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- THEMES
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use { "ellisonleao/gruvbox.nvim" }
+
     use "lukas-reineke/indent-blankline.nvim"
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -34,5 +37,9 @@ return require('packer').startup(function(use)
     })
 
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+    use {
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
 
 end)
