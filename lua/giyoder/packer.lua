@@ -19,11 +19,14 @@ return require('packer').startup(function(use)
 
     -- THEMES
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({ 'catppuccin/vim', as = 'catppuccin' })
     use { "ellisonleao/gruvbox.nvim" }
+    use "olimorris/onedarkpro.nvim"
 
     use "lukas-reineke/indent-blankline.nvim"
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use "steelsojka/pears.nvim"
+    use "windwp/nvim-ts-autotag"
 
     use {
         'numToStr/Comment.nvim',
@@ -49,10 +52,25 @@ return require('packer').startup(function(use)
         end
     })
 
-    use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
     use {
-        "williamboman/mason.nvim",
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+            'williamboman/mason.nvim',
+            run = function()
+                pcall(vim.cmd, 'MasonUpdate')
+            end,
+            },
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
     }
 
 end)
