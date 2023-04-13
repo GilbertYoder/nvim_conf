@@ -15,10 +15,10 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -30,10 +30,10 @@ vim.keymap.set("n", "<C-l>", "5l")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Misc
-vim.keymap.set({"n"}, "<leader>k", "zz")
+vim.keymap.set({ "n" }, "<leader>k", "zz")
 
 -- Saving
-vim.keymap.set({"n", "v", "i"}, "<C-s>", [[:w<CR>]])
+vim.keymap.set({ "n", "v", "i" }, "<C-s>", [[:w<CR>]])
 
 -- Window Controls
 vim.keymap.set("n", "<leader>l", "<C-w>l")
@@ -52,3 +52,6 @@ vim.keymap.set("n", "<leader>hp", [[:Gitsigns prev_hunk<CR>]])
 vim.keymap.set("n", "<leader>hd", [[:Gitsigns toggle_deleted<CR>]])
 vim.keymap.set("n", "<leader>hw", [[:Gitsigns toggle_word_diff<CR>]])
 vim.keymap.set("n", "<leader>hv", [[:Gitsigns diffthis<CR>]])
+
+-- Python Formatter
+vim.keymap.set("n", "<leader>fq", [[:silent !black %<CR>]])
