@@ -55,3 +55,15 @@ vim.keymap.set("n", "<leader>hv", [[:Gitsigns diffthis<CR>]])
 
 -- Python Formatter
 vim.keymap.set("n", "<leader>fq", [[:silent !black %<CR>]])
+
+-- Neotree
+vim.keymap.set("n", "<leader>pp", [[:Neotree<CR>]])
+
+-- Tabs
+vim.keymap.set("n", "<leader><C-n>", [[:tabnew<CR>]])
+vim.keymap.set("n", "<leader><C-q>", [[:tabclose<CR>]])
+vim.keymap.set("n", "<leader>1", [[:tabn1<CR>]])
+vim.keymap.set("n", "<leader>2", [[:tabn2<CR>]])
+vim.keymap.set("n", "<leader>3", [[:tabn3<CR>]])
+vim.keymap.set("n", "<leader>4", [[:tabn4<CR>]])
+vim.keymap.set("n", "<leader>5", [[:tabn5<CR>]])
